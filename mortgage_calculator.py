@@ -7,9 +7,11 @@ st.title("05-29-2025")
 st.title("Mortgage Repayments Calculator")
 
 st.write("### Input Data")
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
+
 home_value = col1.number_input("Home Value", min_value=0, value=500000)
 deposit = col1.number_input("Deposit", min_value=0, value=100000)
+
 interest_rate = col2.number_input("Interest Rate (in %)", min_value=0.0, value=5.5)
 loan_term = col2.number_input("Loan Term (in years)", min_value=1, value=30)
 
@@ -63,3 +65,11 @@ df = pd.DataFrame(
 st.write("### Payment Schedule")
 payments_df = df[["Year", "Remaining Balance"]].groupby("Year").min()
 st.line_chart(payments_df)
+
+
+st.markdown("# App")
+st.markdown("**This is bold text** and *this is italic*.")
+st.markdown("- text1\n- text2\n- text3")
+
+
+
